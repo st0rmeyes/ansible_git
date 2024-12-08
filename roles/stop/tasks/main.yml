@@ -1,0 +1,22 @@
+- name: Wait for user to input stop
+  pause:
+    prompt: "Input 'stop' to stop containers"
+  register: user_input
+  tags:
+    - stop
+
+- name: Stop docker container - backend
+  docker_container:
+    name: "{{ backend_container }}"
+    state: stopped
+  when: user_input.user_input == 'stop'
+  tags:
+    - stop
+
+- name: Stop docker container - frontend
+  docker_container:
+    name: "{{ frontend_container }}"
+    state: stopped
+  when: user_input.user_input == 'stop'
+  tags:
+    - stop

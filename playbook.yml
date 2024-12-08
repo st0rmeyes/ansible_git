@@ -1,0 +1,10 @@
+- name: Deploy web-app through docker-compose
+  hosts: docker_hosts
+  become: true
+  roles:
+    - common
+    - git
+    - docker
+    - docker_compose
+    - start
+    - stop

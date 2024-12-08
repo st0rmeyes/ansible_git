@@ -1,0 +1,4 @@
+- name: Restart docker
+  service:
+    name: docker-compose
+    state: restarted

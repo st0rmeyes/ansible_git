@@ -1,0 +1,11 @@
+- name: Install Docker-compose
+  get_url:
+    url: https://github.com/docker/compose/releases/download/v2.30.3/docker-compose-linux-x86_64
+    dest: /usr/local/bin/docker-compose
+    mode: 'u+x,g+x'
+
+- name: Change file ownership, group and permissions
+  ansible.builtin.file:
+    path: /usr/local/bin/docker-compose
+    owner: root
+    group: root

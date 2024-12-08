@@ -1,0 +1,2 @@
+repo_dest: "~/myApp"
+docker_compose_file: "DevOps/docker-compose.yml"

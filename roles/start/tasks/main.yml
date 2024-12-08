@@ -1,0 +1,4 @@
+- name: Run Docker Compose
+  command: docker-compose -f "{{ repo_dest }}/{{ docker_compose_file }}" up -d
+  args:
+    chdir: "{{ repo_dest }}"
